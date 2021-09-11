@@ -1,6 +1,7 @@
 package com.example.threading
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.*
 import android.renderscript.Sampler
 import android.util.Log
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.TextView
 import androidx.core.os.postDelayed
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.lang.Exception
 import java.time.Clock
 
@@ -24,6 +26,8 @@ class MainActivity : AppCompatActivity() {
     var tv_number_handler:TextView? = null
     var bu_start_hander:Button? = null
 
+    var flb:FloatingActionButton? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         tv_number_handler = findViewById(R.id.tv_number_handler)
         bu_start_hander = findViewById(R.id.bu_star_handler)
 
+        flb = findViewById(R.id.flb)
 
         val th = Thread(object :Runnable{
             override fun run() {
@@ -106,7 +111,13 @@ class MainActivity : AppCompatActivity() {
             th2.start()
             bu_start_hander!!.isClickable = false
         }
+
+        flb!!.setOnClickListener {
+            startActivity(Intent(this,Activity_one::class.java))
+        }
+
     }
+
 
 
     @SuppressLint("HandlerLeak")

@@ -72,5 +72,13 @@
 
     </Button>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/flb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_marginTop="35pt"
+        app:srcCompat="@android:drawable/ic_media_next" />
+
 
 </LinearLayout>
