@@ -98,7 +98,7 @@ class Activity_one : AppCompatActivity() {
                 handler.post(object :Runnable
                 {
                     override fun run() {
-                        Log.d("clear", "dfgddfgfgdfgdfgdfgdfgddfgdfgfgdfgdfgdfg")
+
                         bu_runonuithread!!.isClickable = true
                         tv_progress!!.visibility = View.INVISIBLE
                         myprogress!!.visibility = View.INVISIBLE
